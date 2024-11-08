@@ -1,0 +1,95 @@
+#controller código
+package com.example.demo.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+
+@Controller
+@RequestMapping("/escola")
+public class EscolaControle {
+    @RequestMapping(value="/inicio", method = RequestMethod.GET)
+    public @ResponseBody String inicio () {
+        return "Bem vindo a escola SENAI São Carlos";
+    }
+
+    @RequestMapping(value="/faleconosco", method = RequestMethod.GET)
+    public @ResponseBody String faleConosco() {
+        return "Entre em contato através dos nossos canais de atendimento";
+    }
+
+    @RequestMapping(value="/sobre", method = RequestMethod.GET)
+    public @ResponseBody String sobre() {
+        return "Sobre a nossa escola";
+    }
+
+    @RequestMapping(value="/paginaInicial", method = RequestMethod.GET)
+    public String home() {
+        return "home";
+    }
+
+    @RequestMapping(value="/servico", method = RequestMethod.GET)
+    public String servico() {
+        return "servico";
+    }
+
+    @RequestMapping(value="/sobrenos", method = RequestMethod.GET)
+    public String sobrenos() {
+        return "sobre";
+    }
+
+    @RequestMapping(value="/contato", method = RequestMethod.GET)
+    public String contato() {
+        return "contato";
+    }
+
+}
+
+#código sobre
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sobre</title>
+</head>
+<body>
+    <p>O Serviço Nacional de Aprendizagem Industrial (SENAI) tem como objetivo estimular a inovação industrial por meio da educação, consultoria, pesquisa aplicada e serviços técnicos e tecnológicos que são decisivos para a competitividade das empresas do Estado e do Brasil.</p>
+</body>
+</html>
+
+#código serviço
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Serviço</title>
+</head>
+<body>
+    <p>Temos vários cursos para oferecer, visite nossa página para descobrí-los <a href="https://sp.senai.br/cursos?unidade=601">clicando aqui</a></p>
+</body>
+</html>
+
+#codigo contato
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contato</title>
+</head>
+<body>
+    <p>Endereço: R. Cândido Padim, 25 - Vila Prado, São Carlos - SP
+        Telefone: (16) 2106-8700
+        Horário de funcionamento: das 8:00 às 20:00
+        </p>
+</body>
+</html>
+
+#codigo application.properties
+
+spring.application.name=demo
+server.port=8090
+spring.thymeleaf.prefix=classpath:/templates/
+spring.thymeleaf.suffix=.html
+spring.thymeleaf.cache=false
